@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="J5M-pu-9Ld">
+                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="445228394.27118301">
+                                    <!--2015-02-10 02:33:14 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="jJY-F3-j8P"/>
+                                </connections>
+                            </datePicker>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v68-tE-8tI">
+                                <rect key="frame" x="-6" y="394" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Iu-p6-JGY"/>
+                                    <barButtonItem systemItem="done" id="DQn-iy-6gP">
+                                        <connections>
+                                            <action selector="closeDatePicker:" destination="BYZ-38-t0r" id="3Eg-Sx-cLV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEN-lA-L1D">
+                                <rect key="frame" x="25" y="131" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92N-fe-n0w">
+                                <rect key="frame" x="434" y="127" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="PC1-ir-MNY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="JJy-Am-b8b"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="v68-tE-8tI" secondAttribute="trailing" constant="-10" id="9oC-Aq-SDB"/>
+                            <constraint firstItem="eEN-lA-L1D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="ATo-K3-2w2"/>
+                            <constraint firstItem="v68-tE-8tI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-22" id="cgX-cu-xyK"/>
+                            <constraint firstItem="J5M-pu-9Ld" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="dRL-Fg-yEP"/>
+                            <constraint firstItem="J5M-pu-9Ld" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eVz-JU-a41"/>
+                            <constraint firstItem="92N-fe-n0w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="107" id="edq-wf-BHG"/>
+                            <constraint firstAttribute="trailing" secondItem="J5M-pu-9Ld" secondAttribute="trailing" id="h7e-Kg-oAu"/>
+                            <constraint firstItem="eEN-lA-L1D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="111" id="hgs-I5-fVF"/>
+                            <constraint firstItem="J5M-pu-9Ld" firstAttribute="top" secondItem="v68-tE-8tI" secondAttribute="bottom" id="lR9-nb-53r"/>
+                            <constraint firstItem="92N-fe-n0w" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="tCg-1n-i5X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="J5M-pu-9Ld" id="VLx-MM-dpa"/>
+                        <outlet property="textField" destination="92N-fe-n0w" id="74b-AU-dYR"/>
+                        <outlet property="toolbar" destination="v68-tE-8tI" id="8n9-ID-Cs7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="557"/>
+        </scene>
+    </scenes>
+</document>
